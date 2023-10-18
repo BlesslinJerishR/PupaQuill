@@ -1,0 +1,18 @@
+Incorporate a rich text editor textarea in React using packages like QuillJS + Y.JS in order to convert a normal text area to a collaborative rich text area. The below capability needs to be available in the implementation
+Ability to highlight entire text belonging to a particular user.
+
+Quill Modules ➝ https://github.com/quilljs/awesome-quill#modules
+
+Need to have(Mandatory)
+
+[x] - quill-find-replace-module
+[x] - quill-focus
+[-] - quill-emoji
+[x] - quill-cursors
+[x] - quill-better-table
+[x] - quill-paste-smart
+
+Nice to have (optional)
+
+[x] - quill-autoformat
+[x] - quill-html-edit-button

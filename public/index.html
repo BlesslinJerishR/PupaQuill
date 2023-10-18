@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/color/48/quill-with-ink.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Text Area React App made using Quill.js + Y.js"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://img.icons8.com/color/48/quill-with-ink.png"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Pupa Quill</title>
+    <!-- Quill StyleSheet -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+    <!-- Quill Focus StyleSheet -->
+    <link
+      href="https://rawgit.com/amka/quill-focus/master/src/focus.css"
+      rel="stylesheet"
+    />
+    <!-- Quill Tables StyleSheet-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.2/quill.snow.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/quill-better-table@1.2.7/dist/quill-better-table.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css"
+    />
+    <link rel="stylesheet" href="../src/index.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script
+      charset="UTF-8"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/xml.min.js"
+    ></script>
+  </head>
+  <body class="bg-black text-white">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Header Section -->
+    <div class="com">
+      <div class="text-center pt-[50px]">
+        <img class="rounded-[20px]" height="200" width="200" src="https://i.imgur.com/fWPKTA6.png" style="display: block; margin: 0 auto;"/>
+      </div>
+      <br>
+      <br>
+      <h1 class="text-6xl pt-5 qu h-[100px]">Pupa Quill</h1></div>
+    <div class="p-[80px]"><h1 class="text-4xl intro">Transforming words into a symphony of a<br> collaborative rich text editor with <span class="txt-type" data-wait="3000" data-words='["collaboration_", "teamwork_", "real time_", "stylings_", "hyper links_", "hashtags_", "code_", "formatting_"]'></span>.</h1></div>
+    <div id="editor" class="w-[700px] h-[200px] text-center" style="display: block; margin: 0 auto;">
+      <p>Hello World!</p>
+      <p>Some initial <strong>bold</strong> text</p>
+      <p><br /></p>
+    </div>
+    <div id="search-container" class="mt-8 text-center">
+      <input id="search-input" class="input rounded-md p-[7px] text-black" type="text" placeholder=" search" />
+      &nbsp;&nbsp;
+      <input
+        id="replace-input"
+        class="input rounded-md p-[7px] text-black"
+        type="text"
+        placeholder=" replace"
+      />
+      <button id="search" class="mt-[50px] ml-3 w-[160px] h-[37px] text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Find</button>
+      <button id="replace-all" class="ml-1 mt-[50px] w-[160px] h-[37px] text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Replace all</button>
+      <button id="replace" class="mt-[50px] ml-1 w-[160px] h-[37px] text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Replace</button>
+    </div>
+    <div class="flex">
+      <div class="btn-group  mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button id="insert-table" class="pt-1 mx-5">Insert Table</button>
+      </div>
+      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming soon</button>
+      </div>
+      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming soon</button>
+      </div>
+      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming soon</button>
+      </div>
+      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming soon</button>
+      </div>
+    </div>
+
+    <h1 class="text-3xl mt-10 cursors"> # Quill Cursors</h1>
+
+    <div class="container mt-5 text-center ml-[17%]">
+      <div class="editor2">
+        <h2 class="text-2xl">USER 1</h2>
+        <br />
+        <div id="editor-one"></div>
+      </div>
+      <div class="editor2 ml-[100px]">
+        <h2 class="text-2xl">USER 2</h2>
+        <br />
+        <div id="editor-two"></div>
+      </div>
+    </div>
+    <footer class="mt-10">
+      <div>
+        <h1>
+          <span>Made with &#128155;</span><br>
+          Blesslin Jerish R
+        </h1>
+      </div>
+    </footer>
+    <!-- Typewriter Effect -->
+    <script>
+      class TypeWriter {
+      constructor(txtElement, words, wait = 3000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 8);
+        this.type();
+        this.isDeleting = false;
+      }
+
+      type() {
+        const current = this.wordIndex % this.words.length;
+        const fullTxt = this.words[current];
+
+        if(this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+        this.txtElement.innerHTML = `<span class="txt" style="color: #e2000f;">${this.txt}</span>`;
+
+        let typeSpeed = 100;
+
+        if(this.isDeleting) {
+          typeSpeed /= 2;
+        }
+
+        if(!this.isDeleting && this.txt === fullTxt) {
+          typeSpeed = this.wait;
+          this.isDeleting = true;
+        } else if(this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.wordIndex++;
+          typeSpeed = 300;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+
+    function init() {
+      const txtElement = document.querySelector('.txt-type');
+      const words = JSON.parse(txtElement.getAttribute('data-words'));
+      const wait = txtElement.getAttribute('data-wait');
+      new TypeWriter(txtElement, words, wait);
+    }
+    </script>
+    <!-- Quill HTML edit Button CDN -->
+    <script
+      src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"
+      crossorigin="anonymous"
+    ></script>
+    <!--  DEVELOMENT  <script src="../../../dist/quill.htmlEditButton.min.js"></script> -->
+    <script src="https://unpkg.com/quill-html-edit-button@2.2.7/dist/quill.htmlEditButton.min.js""></script>
+    <!-- Quill JS CDN-->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Quill Paste Smart CDN -->
+    <script src="https://unpkg.com/quill-paste-smart@latest/dist/quill-paste-smart.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Quill Cursors CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/quill-cursors@3.0.0/dist/quill-cursors.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.3/quill.min.js"></script>
+    <!-- Quill Better Table CDN -->
+    <script src="https://unpkg.com/quill-better-table@1.2.10/dist/quill-better-table.min.js"></script>
+    <!-- Quill Auto Format -->
+    <script>
+      !(function (e, t) {
+        "object" == typeof exports && "object" == typeof module
+          ? (module.exports = t(require("quill")))
+          : "function" == typeof define && define.amd
+          ? define(["quill"], t)
+          : "object" == typeof exports
+          ? (exports.QuillAutoformat = t(require("quill")))
+          : (e.QuillAutoformat = t(e.Quill));
+      })(window, function (e) {
+        return (function (e) {
+          var t = {};
+          function r(n) {
+            if (t[n]) return t[n].exports;
+            var o = (t[n] = { i: n, l: !1, exports: {} });
+            return e[n].call(o.exports, o, o.exports, r), (o.l = !0), o.exports;
+          }
+          return (
+            (r.m = e),
+            (r.c = t),
+            (r.d = function (e, t, n) {
+              r.o(e, t) ||
+                Object.defineProperty(e, t, { enumerable: !0, get: n });
+            }),
+            (r.r = function (e) {
+              "undefined" != typeof Symbol &&
+                Symbol.toStringTag &&
+                Object.defineProperty(e, Symbol.toStringTag, {
+                  value: "Module",
+                }),
+                Object.defineProperty(e, "__esModule", { value: !0 });
+            }),
+            (r.t = function (e, t) {
+              if ((1 & t && (e = r(e)), 8 & t)) return e;
+              if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+              var n = Object.create(null);
+              if (
+                (r.r(n),
+                Object.defineProperty(n, "default", {
+                  enumerable: !0,
+                  value: e,
+                }),
+                2 & t && "string" != typeof e)
+              )
+                for (var o in e)
+                  r.d(
+                    n,
+                    o,
+                    function (t) {
+                      return e[t];
+                    }.bind(null, o)
+                  );
+              return n;
+            }),
+            (r.n = function (e) {
+              var t =
+                e && e.__esModule
+                  ? function () {
+                      return e.default;
+                    }
+                  : function () {
+                      return e;
+                    };
+              return r.d(t, "a", t), t;
+            }),
+            (r.o = function (e, t) {
+              return Object.prototype.hasOwnProperty.call(e, t);
+            }),
+            (r.p = ""),
+            r((r.s = 1))
+          );
+        })([
+          function (t, r) {
+            t.exports = e;
+          },
+          function (e, t, r) {
+            "use strict";
+            r.r(t);
+            var n = r(0),
+              o = r.n(n);
+            const i = o.a.import("blots/embed"),
+              s = o.a.import("blots/inline"),
+              l = o.a.import("blots/text"),
+              a = o.a.import("blots/cursor");
+            class u extends i {
+              static create(e) {
+                let t = super.create(e);
+                return (
+                  t.setAttribute("href", this.BASE_URL + e),
+                  t.setAttribute("spellcheck", !1),
+                  (t.textContent = "#" + e),
+                  t
+                );
+              }
+              static formats(e) {
+                return e.getAttribute("href").substr(this.BASE_URL.length);
+              }
+              format(e, t) {
+                this.domNode.setAttribute("href", this.BASE_URL + t);
+              }
+              static value(e) {
+                return e.textContent.substr(1);
+              }
+            }
+            (u.blotName = "hashtag"),
+              (u.className = "ql-hashtag"),
+              (u.tagName = "A"),
+              (u.BASE_URL = "#");
+            class f extends s {
+              static create(e) {
+                let t = super.create(e);
+                return (
+                  t.setAttribute("href", this.BASE_URL + e),
+                  t.setAttribute("spellcheck", !1),
+                  t
+                );
+              }
+              static formats(e) {
+                return e.getAttribute("href").substr(this.BASE_URL.length);
+              }
+              format(e, t) {
+                this.domNode.setAttribute("href", this.BASE_URL + t);
+              }
+            }
+            (f.blotName = "hashtag"),
+              (f.className = "ql-hashtag"),
+              (f.tagName = "A"),
+              (f.allowedChildren = [l, a]),
+              (f.BASE_URL = "#");
+            const c = o.a.import("blots/embed");
+            class h extends c {
+              static create(e) {
+                const t = super.create(e);
+                return (
+                  t.setAttribute("title", e),
+                  t.setAttribute("href", this.BASE_URL + e),
+                  (t.textContent = "@" + e),
+                  t
+                );
+              }
+              static value(e) {
+                return e.textContent.substr(1);
+              }
+            }
+            (h.blotName = "mention"),
+              (h.className = "ql-mention"),
+              (h.tagName = "A"),
+              (h.BASE_URL = "/");
+            var p = h;
+            function d(e, t) {
+              return (
+                (function (e) {
+                  if (Array.isArray(e)) return e;
+                })(e) ||
+                (function (e, t) {
+                  var r = [],
+                    n = !0,
+                    o = !1,
+                    i = void 0;
+                  try {
+                    for (
+                      var s, l = e[Symbol.iterator]();
+                      !(n = (s = l.next()).done) &&
+                      (r.push(s.value), !t || r.length !== t);
+                      n = !0
+                    );
+                  } catch (e) {
+                    (o = !0), (i = e);
+                  } finally {
+                    try {
+                      n || null == l.return || l.return();
+                    } finally {
+                      if (o) throw i;
+                    }
+                  }
+                  return r;
+                })(e, t) ||
+                (function () {
+                  throw new TypeError(
+                    "Invalid attempt to destructure non-iterable instance"
+                  );
+                })()
+              );
+            }
+            const m = o.a.import("core/module"),
+              g = o.a.import("delta"),
+              b = o.a.import("parchment"),
+              y = b.Attributor,
+              x = b.Scope;
+            class w extends m {
+              constructor(e, t) {
+                super(e, t),
+                  (this.transforms = t),
+                  this.registerTypeListener(),
+                  this.registerPasteListener();
+              }
+              registerPasteListener() {
+                for (const e in this.transforms) {
+                  const t = this.transforms[e];
+                  this.quill.clipboard.addMatcher(Node.TEXT_NODE, (e, r) => {
+                    if ("string" == typeof e.data)
+                      return (
+                        r.ops.forEach((e, r, n) => {
+                          if ("string" == typeof e.insert) {
+                            let o = A(t, e.insert),
+                              i = new g([e]).compose(o);
+                            n.splice(r, 1, ...i.ops);
+                          }
+                        }),
+                        r
+                      );
+                  });
+                }
+              }
+              registerTypeListener() {
+                this.quill.keyboard.addBinding(
+                  { key: 38, collapsed: !0, format: ["autoformat-helper"] },
+                  this.forwardKeyboardUp.bind(this)
+                ),
+                  this.quill.keyboard.addBinding(
+                    { key: 40, collapsed: !0, format: ["autoformat-helper"] },
+                    this.forwardKeyboardDown.bind(this)
+                  ),
+                  this.quill.on(o.a.events.TEXT_CHANGE, (e, t, r) => {
+                    let n = e.ops;
+                    if ("user" !== r || !n || n.length < 1) return;
+                    let i = n.length - 1,
+                      s = n[i];
+                    for (; !s.insert && i > 0; ) s = n[--i];
+                    if (!s.insert || "string" != typeof s.insert) return;
+                    let l = "\n" === s.insert,
+                      a = this.quill.getSelection();
+                    if (!a) return;
+                    let u = this.quill.getLength() - a.index - (l ? 1 : 0),
+                      f = a.index,
+                      c = d(this.quill.getLeaf(f), 1)[0];
+                    if (!c || !c.text) return;
+                    let h = c.offset(c.scroll),
+                      p = f - h,
+                      m = !1;
+                    for (const e in this.transforms) {
+                      const t = this.transforms[e];
+                      if (
+                        t.helper &&
+                        t.helper.trigger &&
+                        s.insert.match(t.helper.trigger)
+                      )
+                        this.quill.formatText(
+                          f,
+                          1,
+                          "autoformat-helper",
+                          e,
+                          o.a.sources.API
+                        ),
+                          this.openHelper(t, f);
+                      else if (s.insert.match(t.trigger || /./)) {
+                        this.closeHelper(t);
+                        let e = new g().retain(h),
+                          r = A(t, c.text, p);
+                        r && (e = e.concat(r)),
+                          this.quill.updateContents(e, "api"),
+                          (m = !0);
+                      }
+                    }
+                    m &&
+                      setTimeout(() => {
+                        this.quill.setSelection(
+                          this.quill.getLength() - u,
+                          "api"
+                        );
+                      }, 0);
+                  });
+              }
+              forwardKeyboard(e, t) {
+                if (this.currentHelper && this.currentHelper.container) {
+                  let e =
+                    this.currentHelper.container.querySelector(
+                      ".dropdown-menu"
+                    );
+                  console.log("keyboard", e, t.event), e.dispatchEvent(t.event);
+                }
+              }
+              forwardKeyboardUp(e, t) {
+                var r = new KeyboardEvent("keydown", {
+                  key: "ArrowUp",
+                  keyCode: 38,
+                  which: 38,
+                  bubbles: !0,
+                  cancelable: !0,
+                });
+                (t.event = r), this.forwardKeyboard(e, t);
+              }
+              forwardKeyboardDown(e, t) {
+                var r = new KeyboardEvent("keydown", {
+                  key: "ArrowDown",
+                  keyCode: 40,
+                  which: 40,
+                  bubbles: !0,
+                  cancelable: !0,
+                });
+                (t.event = r), this.forwardKeyboard(e, t);
+              }
+              openHelper(e, t) {
+                if (
+                  e.helper &&
+                  ((this.currentHelper = e.helper),
+                  "function" == typeof e.helper.open)
+                ) {
+                  console.log("openHelper", t, this.quill.getFormat(t));
+                  let r = this.quill.getBounds(t),
+                    n = this.quill.addContainer("ql-helper");
+                  (n.style.position = "absolute"),
+                    (n.style.top = r.top + "px"),
+                    (n.style.left = r.left + "px"),
+                    (n.style.width = r.width + "px"),
+                    (n.style.height = r.height + "px"),
+                    console.log("openHelper", r, n),
+                    (e.helper.container = n),
+                    e.helper.open(n);
+                }
+              }
+              closeHelper(e) {
+                e.helper &&
+                  "function" == typeof e.helper.close &&
+                  e.helper.close(e.helper.container);
+              }
+            }
+            function A(e, t, r) {
+              e.find.global ||
+                (e.find = new RegExp(e.find, e.find.flags + "g")),
+                (e.find.lastIndex = 0);
+              let n = new g(),
+                o = null;
+              if (null != r)
+                for (o = e.find.exec(t); o && o.length && o.index < r; ) {
+                  if (o.index < r && o.index + o[0].length + 1 >= r) {
+                    n = n.concat(v(e, o).ops);
+                    break;
+                  }
+                  o = e.find.exec(t);
+                }
+              else
+                for (; null !== (o = e.find.exec(t)); ) {
+                  let r = v(e, o);
+                  (n = n.concat(r.ops)),
+                    (t = t.substr(r.rightIndex)),
+                    (e.find.lastIndex = 0);
+                }
+              return n;
+            }
+            function v(e, t) {
+              let r = (t = (function (e, t) {
+                  if (e.extract) {
+                    let r = new RegExp(e.extract).exec(t[0]);
+                    return r && r.length ? ((r.index += t.index), r) : t;
+                  }
+                  return t;
+                })(e, t)).index,
+                n = (function (e, t) {
+                  let r = new RegExp(e.extract || e.find);
+                  return e.transform ? t.replace(r, e.transform) : t;
+                })(e, t[0]),
+                o = n;
+              e.insert && ((o = {})[e.insert] = n);
+              let i = (function (e, t) {
+                let r = {};
+                return (
+                  "string" == typeof e.format
+                    ? (r[e.format] = t)
+                    : "object" == typeof e.format && (r = e.format),
+                  r
+                );
+              })(e, n);
+              const s = new g();
+              return (
+                s.retain(r).delete(t[0].length).insert(o, i),
+                { ops: s, rightIndex: r + t[0].length }
+              );
+            }
+            w.DEFAULTS = {
+              hashtag: {
+                trigger: /[\s.,;:!?]/,
+                find: /(?:^|\s)#[^\s.,;:!?]+/i,
+                extract: /#([^\s.,;:!?]+)/i,
+                transform: "$1",
+                insert: "hashtag",
+              },
+              mention: {
+                trigger: /[\s.,;:!?]/,
+                find: /(?:^|\s)@[^\s.,;:!?]+/i,
+                extract: /@([^\s.,;:!?]+)/i,
+                transform: "$1",
+                insert: "mention",
+              },
+              link: {
+                trigger: /[\s]/,
+                find: /https?:\/\/[\S]+|(www\.[\S]+)/gi,
+                transform: function (e, t) {
+                  return t ? "http://" + e : e;
+                },
+                format: "link",
+              },
+            };
+            const q = new y("autoformat-helper", "data-helper", {
+              scope: x.INLINE,
+            });
+            r.d(t, "default", function () {
+              return w;
+            }),
+              r.d(t, "Hashtag", function () {
+                return u;
+              }),
+              r.d(t, "Mention", function () {
+                return p;
+              }),
+              r.d(t, "AutoformatHelperAttribute", function () {
+                return q;
+              }),
+              o.a.version &&
+                parseInt(o.a.version[0]) < 2 &&
+                console.warn(
+                  "quill-autoformat requires Quill 2.0 or higher to work properly"
+                ),
+              o.a.register({
+                "modules/autoformat": w,
+                "formats/hashtag": u,
+                "formats/mention": p,
+                "formats/autoformat-helper": q,
+              });
+          },
+        ]);
+      });
+    </script>
+    <script>
+      Quill.register(
+        {
+          "modules/better-table": quillBetterTable,
+        },
+        true
+      );
+
+      window.onload = () => {
+        let tableModule = quill.getModule("better-table");
+        document.body.querySelector("#insert-table").onclick = () => {
+          tableModule.insertTable(3, 3);
+        };
+      };
+    </script>
+    <!-- Quill Cursors -->
+    <script>
+      Quill.register("modules/cursors", QuillCursors);
+
+      const CURSOR_LATENCY = 1000;
+      const TEXT_LATENCY = 500;
+
+      const quillOne = new Quill("#editor-one", {
+        theme: "snow",
+        modules: {
+          cursors: {
+            transformOnTextChange: true,
+          },
+        },
+      });
+
+      const quillTwo = new Quill("#editor-two", {
+        theme: "snow",
+        modules: {
+          cursors: {
+            transformOnTextChange: true,
+          },
+        },
+      });
+
+      const cursorsOne = quillOne.getModule("cursors");
+      const cursorsTwo = quillTwo.getModule("cursors");
+
+      cursorsOne.createCursor("cursor", "User 2", "blue");
+      cursorsTwo.createCursor("cursor", "User 1", "red");
+
+      function textChangeHandler(quill) {
+        return function (delta, oldContents, source) {
+          if (source === "user") {
+            setTimeout(() => quill.updateContents(delta), TEXT_LATENCY);
+          }
+        };
+      }
+
+      function selectionChangeHandler(cursors) {
+        const debouncedUpdate = debounce(updateCursor, 500);
+
+        return function (range, oldRange, source) {
+          if (source === "user") {
+            updateCursor(range);
+          } else {
+            debouncedUpdate(range);
+          }
+        };
+
+        function updateCursor(range) {
+          setTimeout(() => cursors.moveCursor("cursor", range), CURSOR_LATENCY);
+        }
+      }
+
+      quillOne.on("text-change", textChangeHandler(quillTwo));
+      quillTwo.on("text-change", textChangeHandler(quillOne));
+
+      quillOne.on("selection-change", selectionChangeHandler(cursorsTwo));
+      quillTwo.on("selection-change", selectionChangeHandler(cursorsOne));
+
+      function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+          const context = this;
+          const later = function () {
+            timeout = null;
+            func.apply(context, args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+    </script>
+    <!-- Quill Focus -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Quill Focus -->
+    <script src="https://rawgit.com/amka/quill-focus/master/src/focus.js"></script>
+    <!-- Quill Origin & Find and Replace -->
+    <script>
+      class Searcher {
+        constructor(quill) {
+          this.quill = quill;
+          this.container = document.getElementById("search-container");
+
+          document
+            .getElementById("search")
+            .addEventListener("click", this.search.bind(this));
+          document
+            .getElementById("search-input")
+            .addEventListener("keyup", this.keyPressedHandler.bind(this));
+
+          document
+            .getElementById("replace")
+            .addEventListener("click", this.replace.bind(this));
+          document
+            .getElementById("replace-all")
+            .addEventListener("click", this.replaceAll.bind(this));
+        }
+
+        search() {
+          Searcher.removeStyle();
+          Searcher.SearchedString =
+            document.getElementById("search-input").value;
+          if (Searcher.SearchedString) {
+            let totalText = quill.getText();
+            let re = new RegExp(Searcher.SearchedString, "gi");
+            let match = re.test(totalText);
+            if (match) {
+              let indices = (Searcher.occurrencesIndices =
+                totalText.getIndicesOf(Searcher.SearchedString));
+              let length = (Searcher.SearchedStringLength =
+                Searcher.SearchedString.length);
+
+              indices.forEach((index) =>
+                quill.formatText(index, length, "SearchedString", true)
+              );
+            } else {
+              Searcher.occurrencesIndices = null;
+              Searcher.currentIndex = 0;
+            }
+          } else {
+            Searcher.removeStyle();
+          }
+        }
+
+        replace() {
+          if (!Searcher.SearchedString) return;
+
+          if (!Searcher.occurrencesIndices) this.search();
+          if (!Searcher.occurrencesIndices) return;
+
+          let indices = Searcher.occurrencesIndices;
+
+          let oldString = document.getElementById("search-input").value;
+          let newString = document.getElementById("replace-input").value;
+
+          quill.deleteText(indices[Searcher.currentIndex], oldString.length);
+          quill.insertText(indices[Searcher.currentIndex], newString);
+          quill.formatText(
+            indices[Searcher.currentIndex],
+            newString.length,
+            "SearchedString",
+            false
+          );
+          this.search();
+        }
+
+        replaceAll() {
+          if (!Searcher.SearchedString) return;
+          let oldStringLen =
+            document.getElementById("search-input").value.length;
+          let newString = document.getElementById("replace-input").value;
+
+          if (!Searcher.occurrencesIndices) this.search();
+          if (!Searcher.occurrencesIndices) return;
+
+          if (Searcher.occurrencesIndices) {
+            while (Searcher.occurrencesIndices) {
+              quill.deleteText(Searcher.occurrencesIndices[0], oldStringLen);
+              quill.insertText(Searcher.occurrencesIndices[0], newString);
+
+              this.search();
+            }
+          }
+          Searcher.removeStyle();
+        }
+
+        keyPressedHandler(e) {
+          if (e.key === "Enter") {
+            this.search();
+          }
+        }
+
+        static removeStyle() {
+          quill.formatText(0, quill.getText().length, "SearchedString", false);
+        }
+      }
+
+      occurrencesIndices = [];
+      currentIndex = 0;
+      SearchedStringLength = 0;
+      SearchedString = "";
+
+      const Inline = Quill.import("blots/inline");
+
+      class SearchedStringBlot extends Inline {
+        static create(value) {
+          let node = super.create(value);
+          node.contentEditable = "false";
+          return node;
+        }
+      }
+
+      SearchedStringBlot.blotName = "SearchedString";
+      SearchedStringBlot.className = "ql-searched-string";
+      SearchedStringBlot.tagName = "div";
+
+      // Quill Registers
+      Quill.register("modules/Searcher", Searcher);
+      Quill.register(SearchedStringBlot);
+      Quill.register("modules/focus", Focus);
+      Quill.register("modules/htmlEditButton", htmlEditButton);
+      // Quill Origin
+      const quill = new Quill("#editor", {
+        theme: "snow",
+        modules: {
+          autoformat: {
+            hashtag: {
+              trigger: /[\s.,;:!?]/,
+              find: /(?:^|\s)#[^\s.,;:!?]+/i,
+              extract: /#([^\s.,;:!?]+)/i,
+              transform: "$1",
+              insert: "hashtag",
+            },
+            mention: {
+              trigger: /[\s.,;:!?]/,
+              find: /(?:^|\s)@[^\s.,;:!?]+/i,
+              extract: /@([^\s.,;:!?]+)/i,
+              transform: "$1",
+              insert: "mention",
+            },
+            link: {
+              trigger: /[\s]/,
+              find: /https?:\/\/[\S]+|(www\.[\S]+)/gi,
+              transform: function (value, noProtocol) {
+                // value == match[0], noProtocol == match[1]
+                return noProtocol ? "http://" + value : value;
+              },
+              format: "link",
+            },
+          },
+          focus: { focusClass: "focused-blot" },
+          toolbar: [
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            ["bold", "italic", "underline", "strike"],
+            [{ list: "ordered" }, { list: "bullet" }],
+            ["blockquote", "code-block"],
+            [{ align: [] }],
+            [{ color: [] }, { background: [] }],
+            ["link", "image"],
+            ["clean"],
+          ],
+          htmlEditButton: {
+            syntax: true,
+          },
+          autoformat: true,
+          clipboard: {
+            matchVisual: false,
+            allowed: {
+              tags: [
+                "a",
+                "b",
+                "strong",
+                "u",
+                "s",
+                "i",
+                "p",
+                "br",
+                "ul",
+                "ol",
+                "li",
+                "span",
+              ],
+              attributes: ["href", "rel", "target", "class"],
+            },
+            keepSelection: true,
+            substituteBlockElements: true,
+            magicPasteLinks: true,
+            hooks: {
+              uponSanitizeElement(node, data, config) {
+                console.log(node);
+              },
+            },
+          },
+          Searcher: true,
+          table: true,
+          "better-table": {
+            operationMenu: {
+              items: {
+                unmergeCells: {
+                  text: "Another unmerge cells name",
+                },
+              },
+              color: {
+                colors: ["yellow", "red", "yellow", "blue", "white"],
+                text: "Background Colors:",
+              },
+            },
+          },
+        },
+      });
+
+      String.prototype.getIndicesOf = function (searchStr) {
+        let searchStrLen = searchStr.length;
+        let startIndex = 0,
+          index,
+          indices = [];
+        while (
+          (index = this.toLowerCase().indexOf(
+            searchStr.toLowerCase(),
+            startIndex
+          )) > -1
+        ) {
+          indices.push(index);
+          startIndex = index + searchStrLen;
+        }
+        return indices;
+      };
+    </script>
+  </body>
+</html>

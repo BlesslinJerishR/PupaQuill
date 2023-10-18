@@ -1,0 +1,104 @@
+/* Tailwind Configs */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* 0 Remover */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+}
+
+body {
+  zoom: 1.5;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+#editor-one {
+  height: 200px;
+}
+
+#editor-two {
+  height: 200px;
+}
+
+.ql-searched-string {
+  background-color: red;
+  display: inline-block;
+}
+
+.intro,
+.qu,
+.cursors {
+  font-weight: 900;
+}
+.qu {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+}
+.ql-toolbar {
+  margin-left: 305px;
+}
+.ql-toolbar.ql-snow {
+  border: none !important;
+}
+
+.ql-toolbar .ql-stroke {
+  fill: none;
+  stroke: aqua;
+}
+
+.ql-toolbar .ql-fill {
+  fill: aqua;
+  stroke: none;
+}
+
+.ql-toolbar .ql-picker,
+.ql-snow.ql-toolbar button {
+  color: aqua;
+}
+
+table.quill-better-table td {
+  border: 2px solid aqua;
+}
+.editor2 .ql-toolbar {
+  margin-left: 1%;
+  width: 100%;
+}
+
+.ql-editor {
+  color: red;
+}
+
+.ql-html-buttonCancel,
+.ql-html-popupTitle,
+.ql-html-buttonOk {
+  color: black;
+}
+
+.ql-html-popupTitle {
+  padding-bottom: 20px;
+}
+
+.ql-html-buttonCancel,
+.ql-html-buttonOk {
+  margin-top: 120px;
+}
