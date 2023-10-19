@@ -83,6 +83,7 @@ table.quill-better-table td {
 
 .ql-editor {
   color: red;
+  margin-top: 20px;
 }
 
 .ql-html-buttonCancel,
@@ -237,7 +238,7 @@ h1 {
     width: 150% !important;
   }
   .spacer {
-    display: none;
+    display: block;
   }
   .container {
     display: block;
