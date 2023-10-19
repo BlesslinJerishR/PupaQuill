@@ -56,18 +56,19 @@
       <br>
       <br>
       <h1 class="text-6xl pt-5 qu h-[100px]">Pupa Quill</h1></div>
-    <div class="p-[80px]"><h1 class="text-4xl intro">Transforming words into a symphony of a<br> collaborative rich text editor with <span class="txt-type" data-wait="3000" data-words='["collaboration_", "teamwork_", "real time_", "stylings_", "hyper links_", "hashtags_", "code_", "formatting_"]'></span>.</h1></div>
-    <div id="editor" class="w-[700px] h-[200px] text-center" style="display: block; margin: 0 auto;">
+    <div class="p-[30px] lg:p-[80px]"><h1 class="text-4xl intro">Transforming words into a symphony of a<br> collaborative rich text editor with <span class="txt-type" data-wait="3000" data-words='["collaboration_", "teamwork_", "real time_", "stylings_", "hyper links_", "hashtags_", "code_", "formatting_"]'></span>.</h1></div>
+    <div id="editor" class="w-[300px] lg:w-[700px] h-[200px] text-center ml-[-500px]" style="display: block; margin: 0 auto;">
       <p>Hello World!</p>
       <p>Some initial <strong>bold</strong> text</p>
       <p><br /></p>
     </div>
     <div id="search-container" class="mt-8 text-center">
-      <input id="search-input" class="input rounded-md p-[7px] text-black" type="text" placeholder=" search" />
+      <input id="search-input" class=" w-[300px] ml-[10px] input rounded-md p-[7px] text-black" type="text" placeholder=" search" />
       &nbsp;&nbsp;
+      <div class="spacer">&nbsp;</div>
       <input
         id="replace-input"
-        class="input rounded-md p-[7px] text-black"
+        class="input rounded-md p-[7px] text-black replacer"
         type="text"
         placeholder=" replace"
       />
@@ -75,38 +76,47 @@
       <button id="replace-all" class="ml-1 mt-[50px] w-[160px] h-[37px] text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Replace all</button>
       <button id="replace" class="mt-[50px] ml-1 w-[160px] h-[37px] text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Replace</button>
     </div>
-    <div class="flex">
-      <div class="btn-group  mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
-        <button id="insert-table" class="pt-1 mx-5">Insert Table</button>
+    <div class="flex ml-[-5px] lg:ml-[65px]">
+      <div class="h-[45px] lg:h-[50px] mx-[50px] btn-group lg:mx-[40px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button id="insert-table" class="pt-1 mx-5">Insert&nbsp;Table</button>
       </div>
-      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
-        <button class="pt-1 mx-5">coming soon</button>
+      <div class="h-[45px] lg:h-[50px] mx-[10px] btn-group lg:mx-[40px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming&nbsp;soon</button>
       </div>
-      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
-        <button class="pt-1 mx-5">coming soon</button>
+      <div class="h-[45px] cs lg:h-[50px] btn-group mx-[40px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming&nbsp;soon</button>
       </div>
-      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
-        <button class="pt-1 mx-5">coming soon</button>
+      <div class="h-[45px] cs lg:h-[50px] btn-group mx-[40px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming&nbsp;soon</button>
       </div>
-      <div class="btn-group mx-[70px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
-        <button class="pt-1 mx-5">coming soon</button>
+      <div class="h-[45px] cs lg:h-[50px] btn-group mx-[50px] rounded-lg mt-[30px] w-[160px] text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2">
+        <button class="pt-1 mx-5">coming&nbsp;soon</button>
       </div>
     </div>
 
-    <h1 class="text-3xl mt-10 cursors"> # Quill Cursors</h1>
+    <h1 class="text-3xl mt-10 cursors"> # Quill Multi-Cursors</h1>
 
-    <div class="container mt-5 text-center ml-[17%]">
-      <div class="editor2">
+    <div class="inline container mt-5 text-center ml-[17%]">
+      <div class="editor2 ml-[-30px] w-[300px] lg:w-[450px]">
         <h2 class="text-2xl">USER 1</h2>
         <br />
         <div id="editor-one"></div>
       </div>
-      <div class="editor2 ml-[100px]">
+      <div class="editor2 ml-[-30px] w-[300px] mt-5 lg:w-[450px] lg:ml-[30px] lg:mt-0">
         <h2 class="text-2xl">USER 2</h2>
         <br />
         <div id="editor-two"></div>
       </div>
     </div>
+    <h1 class="text-4xl feat pt-[50px]">Features</h1>
+    <div class="wrapper pt-[40px] block">
+      <div class="box a flex"><img width="50" height="94" src="https://img.icons8.com/3d-fluency/94/hand-with-pen--v1.png" alt="hand-with-pen--v1" class="absolute"/><h1 class="ml-[100px] mt-[6px]">Write</h1></div>
+      <div class="box b"><img width="50" height="94" src="https://img.icons8.com/3d-fluency/94/cut.png" alt="cut" class="absolute"/><h1 class="ml-[30px] mt-[6px]">Collaborate</h1></div>
+      <div class="box c"><img width="45" height="94" src="https://img.icons8.com/3d-fluency/94/save-as.png" alt="save-as" class="absolute"/><h1 class="ml-[30px] mt-[6px]">Format</h1></div>
+      <div class="box d"><img width="50" height="50" src="https://img.icons8.com/3d-fluency/188/github.png" alt="github" class="absolute mt-[-10px]"/><h1>Code</h1></div>
+      <div class="box e"><img width="50" height="94" src="https://img.icons8.com/3d-fluency/94/add-link.png" alt="add-link" class="absolute mt-[-10px]"/>URLs</div>
+      <div class="box f"><img width="45" height="48" src="https://img.icons8.com/fluency/48/hashtag-large.png" alt="hashtag-large" class="absolute mt-[-10px]"/>Mentions</div>
+    </div>  
     <footer class="mt-10">
       <div>
         <h1>

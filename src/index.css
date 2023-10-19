@@ -20,10 +20,6 @@ body {
   overflow-x: hidden !important;
 }
 
-body {
-  zoom: 1.5;
-}
-
 h1,
 h2 {
   text-align: center;
@@ -48,7 +44,8 @@ h2 {
 
 .intro,
 .qu,
-.cursors {
+.cursors,
+.feat {
   font-weight: 900;
 }
 .qu {
@@ -101,4 +98,180 @@ table.quill-better-table td {
 .ql-html-buttonCancel,
 .ql-html-buttonOk {
   margin-top: 120px;
+}
+
+.spacer {
+  display: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=MuseoModerno:wght@300&family=Playball&display=swap");
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  width: 70%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  background-color: #000;
+  color: #444;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid purple;
+  line-height: 30px;
+}
+
+.box.a,
+.box.b,
+.box.c,
+.box.d,
+.box.e,
+.box.f {
+  box-shadow: 5px 5px;
+  font-size: 22px;
+  transition-duration: 0.3s;
+}
+
+.box.g {
+  grid-column: 1/4;
+  font-family: "Roboto", sans-serif;
+  font-size: 27px;
+  background-color: bisque;
+  color: darkblue;
+}
+
+.box.a:hover,
+.box.b:hover,
+.box.c:hover,
+.box.d:hover,
+.box.e:hover,
+.box.f:hover {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  transition-duration: 0.3s;
+}
+
+.box.a {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+  color: white;
+}
+.box.a:hover {
+  background-color: #000;
+  color: white;
+}
+.box.b {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+  color: white;
+}
+.box.b:hover {
+  background-color: #000;
+  color: white;
+}
+.box.c {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+  color: white;
+}
+.box.c:hover {
+  background-color: #000;
+  color: white;
+}
+.box.d {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+  color: white;
+}
+.box.d:hover {
+  background-color: #000;
+  color: white;
+}
+.box.e {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+  color: white;
+}
+.box.e:hover {
+  background-color: #000;
+  color: white;
+}
+.box.f {
+  background: linear-gradient(45deg, #ff0ab1, #ff002f);
+  color: white;
+}
+.box.f:hover {
+  background-color: #000;
+  color: white;
+}
+
+.cs {
+  display: block;
+}
+
+@media only screen and (min-width: 1900px) {
+  body {
+    zoom: 1.5;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .ql-toolbar {
+    margin-left: 20px !important;
+  }
+
+  .btn-group button {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  }
+
+  .editor2 .ql-toolbar {
+    margin-left: -80px !important;
+    width: 150% !important;
+  }
+  .spacer {
+    display: none;
+  }
+  .container {
+    display: block;
+  }
+
+  .ql-editor.ql-blank {
+    margin-left: -500px;
+  }
+  .cs {
+    display: none;
+  }
+  .wrapper {
+    display: block;
+  }
+  .box {
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .spacer {
+    display: block;
+  }
+
+  .replacer {
+    margin-left: -12px;
+  }
+
+  .cs {
+    display: none;
+  }
+  .wrapper {
+    display: block;
+  }
+  .box {
+    margin-top: 20px;
+  }
 }
