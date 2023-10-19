@@ -216,6 +216,9 @@ h1 {
   display: block;
 }
 
+.head-br {
+  display: block;
+}
 @media only screen and (min-width: 1900px) {
   body {
     zoom: 1.5;
@@ -256,6 +259,9 @@ h1 {
   .box {
     margin-top: 20px;
   }
+  .head-br {
+    display: none;
+  }
 }
 @media only screen and (max-width: 375px) {
   .spacer {
@@ -274,5 +280,9 @@ h1 {
   }
   .box {
     margin-top: 20px;
+  }
+
+  .head-br {
+    display: none;
   }
 }
